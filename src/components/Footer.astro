@@ -1,0 +1,31 @@
+---
+import { policies, site, socials } from '../config/site';
+
+const linkClass = 'text-sand hover:text-caramel';
+const headingClass = 'text-xs font-medium uppercase tracking-[0.08em] text-cream';
+---
+
+<footer class="bg-ink text-sand">
+	<div class="container-page flex flex-col gap-10 pb-8 pt-14">
+		<div class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-8 text-sm">
+			<div class="flex flex-col gap-2.5">
+				<span class="font-serif text-2xl font-bold text-cream">{site.name}</span>
+				<span>Café de especialidad dominicano.</span>
+			</div>
+			<div class="flex flex-col gap-2">
+				<strong class={headingClass}>Contacto</strong>
+				<a href={`mailto:${site.email}`} class={linkClass}>{site.email}</a>
+				<span>{site.phone}</span>
+			</div>
+			<div class="flex flex-col gap-2">
+				<strong class={headingClass}>Redes</strong>
+				{socials.map((s) => <a href="#" class={linkClass}>{s}</a>)}
+			</div>
+			<div class="flex flex-col gap-2">
+				<strong class={headingClass}>Políticas</strong>
+				{policies.map((p) => <a href="#" class={linkClass}>{p}</a>)}
+			</div>
+		</div>
+		<div class="border-t border-espresso pt-5 text-[13px]">© {new Date().getFullYear()} {site.name}. Santo Domingo, República Dominicana.</div>
+	</div>
+</footer>

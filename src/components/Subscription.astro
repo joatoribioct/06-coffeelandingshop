@@ -1,0 +1,50 @@
+---
+import { plans } from '../config/site';
+---
+
+<section id="suscripcion" class="bg-caramel text-ink">
+	<div class="container-page grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(32px,5vw,64px)] py-[clamp(64px,8vw,104px)]">
+		<div class="flex flex-col gap-[18px]">
+			<span class="eyebrow text-ink">Suscripción</span>
+			<h2 class="h2-section m-0 text-balance text-ink">Recibe tu café cada mes</h2>
+			<p class="m-0 max-w-[52ch] text-ink">
+				Elige tu café y tu molienda. Te lo enviamos recién tostado, con 15% de descuento y envío gratis. Pausa o cancela cuando quieras.
+			</p>
+		</div>
+		<div class="flex flex-col gap-[18px] rounded-2xl bg-cream p-[clamp(24px,3vw,36px)] shadow-[0_8px_24px_rgba(59,36,24,0.18)]">
+			<div class="flex flex-wrap gap-2">
+				{plans.map((pl, i) => (
+					<button
+						type="button"
+						data-plan
+						aria-pressed={i === 1}
+						class:list={[
+							'flex flex-[1_1_120px] cursor-pointer flex-col gap-0.5 rounded-xl border-2 bg-card p-3.5 text-left transition-colors duration-200',
+							i === 1 ? 'border-brown' : 'border-sand',
+						]}
+					>
+						<span class="text-sm font-medium text-brown">{pl.label}</span>
+						<span class="text-xl font-bold text-ink">{pl.price}</span>
+					</button>
+				))}
+			</div>
+
+			<div data-subscribe-success hidden class="rounded-[10px] bg-leaf p-4 font-medium text-cream">
+				¡Listo! Te escribimos a <span data-subscribe-email></span> para confirmar tu primer envío.
+			</div>
+
+			<form data-subscribe-form novalidate class="flex flex-col gap-[18px]">
+				<div class="flex flex-wrap gap-2.5">
+					<input
+						type="email"
+						placeholder="tu@correo.com"
+						aria-label="Correo electrónico"
+						class="min-w-0 flex-[1_1_200px] rounded-[10px] border border-sand bg-white px-4 py-[15px] text-base text-ink outline-none"
+					/>
+					<button type="submit" class="btn cursor-pointer bg-ink px-[22px] py-4 text-cream hover:bg-brown">Suscribirme</button>
+				</div>
+				<span data-email-error hidden class="text-sm font-medium text-danger">Escribe un correo válido.</span>
+			</form>
+		</div>
+	</div>
+</section>

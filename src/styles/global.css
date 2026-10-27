@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+	--color-ink: #151311;
+	--color-cream: #f6eee3;
+	--color-card: #fbf6ef;
+	--color-sand: #e3c9a8;
+	--color-caramel: #c68a4e;
+	--color-brown: #7a4a2a;
+	--color-espresso: #3b2418;
+	--color-leaf: #5e7d4f;
+	--color-danger: #b5473a;
+
+	--font-sans: "DM Sans", system-ui, sans-serif;
+	--font-serif: "Fraunces", Georgia, serif;
+	--font-script: "Caveat", cursive;
+
+	--shadow-card: 0 8px 24px rgba(59, 36, 24, 0.12);
+	--shadow-card-hover: 0 14px 32px rgba(59, 36, 24, 0.18);
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		@apply bg-cream font-sans text-ink antialiased;
+		font-size: clamp(1rem, 1.2vw, 1.125rem);
+		line-height: 1.6;
+	}
+}
+
+@layer components {
+	.container-page {
+		@apply mx-auto w-full max-w-[1240px] px-[clamp(20px,4vw,48px)];
+	}
+	.eyebrow {
+		@apply text-xs font-medium uppercase tracking-[0.08em];
+	}
+	.h2-section {
+		@apply font-serif font-bold leading-tight text-[clamp(1.75rem,3.5vw,2.625rem)];
+	}
+	.h3-card {
+		@apply font-serif font-medium leading-snug text-[clamp(1.25rem,2vw,1.5rem)];
+	}
+	.btn {
+		@apply inline-block rounded-[10px] text-base font-bold leading-none transition-all duration-200;
+	}
+}

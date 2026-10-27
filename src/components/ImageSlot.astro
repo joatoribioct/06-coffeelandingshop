@@ -1,0 +1,21 @@
+---
+interface Props {
+	id: string;
+	placeholder?: string;
+	class?: string;
+}
+
+const { id, placeholder = '', class: className = '' } = Astro.props;
+---
+
+<div
+	data-image-slot={id}
+	class:list={[
+		'flex size-full items-center justify-center overflow-hidden bg-sand/60 p-3 text-center text-sm text-brown',
+		className,
+	]}
+	role={placeholder ? 'img' : undefined}
+	aria-label={placeholder || undefined}
+>
+	{placeholder}
+</div>

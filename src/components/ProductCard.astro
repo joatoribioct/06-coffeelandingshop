@@ -1,0 +1,36 @@
+---
+import type { Product } from '../types';
+import { formatPrice } from '../utils/format';
+import ImageSlot from './ImageSlot.astro';
+
+interface Props {
+	product: Product;
+}
+
+const { product: p } = Astro.props;
+---
+
+<article class="flex flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-card-hover">
+	<div class="relative aspect-square w-full">
+		<ImageSlot id={`producto-${p.id}`} placeholder={`Bolsa ${p.name} sobre madera`} />
+		<span class="eyebrow pointer-events-none absolute left-3 top-3 rounded-full bg-sand px-2.5 py-[5px] text-ink">{p.tag}</span>
+	</div>
+	<div class="flex flex-1 flex-col gap-2 p-5">
+		<h3 class="h3-card m-0">{p.name}</h3>
+		<p class="m-0 text-sm leading-normal text-brown">{p.notes}</p>
+		<div class="mt-auto flex items-center justify-between gap-3 pt-3.5">
+			<div class="flex flex-col">
+				<span class="text-[clamp(20px,1.6vw,22px)] font-bold leading-tight">{formatPrice(p.price)}</span>
+				<span class="text-[13px] text-brown">{p.size} · <span data-grind-label>en grano</span></span>
+			</div>
+			<button
+				type="button"
+				data-add
+				data-id={p.id}
+				data-name={p.name}
+				data-price={p.price}
+				class="btn cursor-pointer bg-caramel px-[18px] py-3.5 text-ink hover:bg-brown hover:text-cream"
+			>Agregar</button>
+		</div>
+	</div>
+</article>

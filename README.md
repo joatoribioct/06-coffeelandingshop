@@ -1,10 +1,13 @@
-# Astro Starter Kit: Minimal
+# Coffee Landing Shop
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## 🎯 Objetivo
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El objetivo de este proyecto es utilizar **Tailwind CSS** para construir una landing page de una sola página para la venta de café.
+
+## 🛠️ Stack
+
+- [Astro](https://astro.build)
+- [Tailwind CSS](https://tailwindcss.com) (integrado con `@tailwindcss/vite`)
 
 ## 🚀 Project Structure
 
@@ -41,3 +44,16 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## File System a implementar
+
+src
+
+- pages
+- components
+- layouts
+- styles
+- scripts
+- types
+- utils
+- config

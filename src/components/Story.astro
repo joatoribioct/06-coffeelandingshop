@@ -1,0 +1,23 @@
+---
+import { site } from '../config/site';
+import ImageSlot from './ImageSlot.astro';
+---
+
+<section id="historia" class="bg-espresso text-cream">
+	<div class="container-page grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(40px,6vw,80px)] py-[clamp(64px,8vw,112px)]">
+		<div class="relative aspect-[5/4] w-full">
+			<ImageSlot id="historia-finca" placeholder="Foto: finca cafetalera en la montaña" class="rounded-2xl" />
+		</div>
+		<div class="flex flex-col gap-[22px]">
+			<span class="eyebrow text-sand">Origen</span>
+			<h2 class="h2-section m-0 text-balance text-cream">De la montaña de Jarabacoa a tu taza</h2>
+			<p class="m-0 max-w-[62ch] text-pretty text-sand">
+				Trabajamos directamente con familias caficultoras a más de 1.100 metros de altura. Pagamos por encima del precio de mercado y compramos solo lo que podemos tostar fresco.
+			</p>
+			<p class="m-0 max-w-[62ch] text-pretty text-sand">
+				El grano llega a nuestro tostador en Santo Domingo, donde lo trabajamos en lotes de 12 kilos para cuidar el dulzor natural de cada finca.
+			</p>
+			{site.showHandwritten && <span class="font-script text-[30px] leading-tight text-caramel">— la familia Nogal</span>}
+		</div>
+	</div>
+</section>

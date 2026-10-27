@@ -1,0 +1,15 @@
+---
+import { site } from '../config/site';
+import { whatsappUrl } from '../utils/format';
+---
+
+<a
+	href={whatsappUrl(site.whatsappNumber)}
+	target="_blank"
+	rel="noopener"
+	aria-label="Escríbenos por WhatsApp"
+	class="fixed bottom-5 right-5 z-30 flex items-center gap-2.5 rounded-full bg-leaf px-5 py-3.5 text-[15px] font-bold text-cream shadow-[0_10px_28px_rgba(21,19,17,0.35)] transition-transform duration-200 hover:-translate-y-[3px] hover:text-cream"
+>
+	<span class="size-2.5 rounded-full bg-cream"></span>
+	<span>WhatsApp</span>
+</a>

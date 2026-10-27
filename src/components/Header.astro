@@ -1,0 +1,44 @@
+---
+import { navLinks, site } from '../config/site';
+---
+
+<header class="sticky top-0 z-20 bg-ink text-cream">
+	<div class="container-page flex flex-wrap items-center justify-between gap-6 py-4">
+		<a href="#inicio" class="font-serif text-2xl font-bold tracking-tight text-cream hover:text-cream">{site.name}</a>
+		<nav class="flex flex-wrap gap-[clamp(16px,2.5vw,32px)] text-[15px]">
+			{navLinks.map((l) => <a href={l.href} class="text-sand hover:text-cream">{l.label}</a>)}
+		</nav>
+		<button
+			type="button"
+			data-cart-toggle
+			class="flex cursor-pointer items-center gap-2.5 rounded-full border border-brown bg-transparent px-4 py-2 text-[15px] font-medium text-cream transition-all duration-200 hover:border-caramel"
+		>
+			<span>Carrito</span>
+			<span data-cart-count class="flex h-6 min-w-6 items-center justify-center rounded-full bg-caramel px-1.5 text-[13px] font-bold text-ink">0</span>
+		</button>
+	</div>
+
+	<div class="container-page relative">
+		<div
+			data-cart-panel
+			hidden
+			class="absolute right-[clamp(20px,4vw,48px)] top-2 w-[min(360px,calc(100vw-40px))] rounded-2xl bg-cream p-6 text-ink shadow-[0_16px_40px_rgba(59,36,24,0.25)]"
+		>
+			<div class="mb-3 font-serif text-[22px] font-bold">Tu pedido</div>
+			<p data-cart-empty class="m-0 text-[15px] text-brown">Aún no has agregado café.</p>
+			<div data-cart-lines></div>
+			<div data-cart-footer hidden>
+				<div class="flex justify-between pb-[18px] pt-3.5 text-lg font-bold">
+					<span>Total</span><span data-cart-total>RD$0</span>
+				</div>
+				<a
+					data-cart-order
+					href="#"
+					target="_blank"
+					rel="noopener"
+					class="block rounded-[10px] bg-caramel p-3.5 text-center text-base font-bold text-ink transition-all duration-200 hover:bg-brown hover:text-cream"
+				>Pedir por WhatsApp</a>
+			</div>
+		</div>
+	</div>
+</header>

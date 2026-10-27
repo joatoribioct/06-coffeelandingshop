@@ -1,16 +1,36 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Products from '../components/Products.astro';
+import Story from '../components/Story.astro';
+import Process from '../components/Process.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Subscription from '../components/Subscription.astro';
+import Location from '../components/Location.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+	<Header />
+	<main>
+		<Hero />
+		<Features />
+		<Products />
+		<Story />
+		<Process />
+		<Testimonials />
+		<Subscription />
+		<Location />
+		<CtaBanner />
+	</main>
+	<Footer />
+	<WhatsAppButton />
+</Layout>
+
+<script>
+	import '../scripts/shop';
+</script>

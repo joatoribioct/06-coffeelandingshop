@@ -1,0 +1,27 @@
+---
+import { grinds, products } from '../config/products';
+import ProductCard from './ProductCard.astro';
+---
+
+<section id="productos" class="bg-cream">
+	<div class="container-page flex flex-col gap-10 pb-[clamp(64px,8vw,112px)]">
+		<div class="flex flex-wrap items-end justify-between gap-6">
+			<div class="flex max-w-[60ch] flex-col gap-2.5">
+				<span class="eyebrow text-brown">Tienda</span>
+				<h2 class="h2-section m-0 text-brown">Nuestros cafés</h2>
+			</div>
+			<div class="flex gap-1 rounded-full bg-sand p-1">
+				{grinds.map((g) => (
+					<button
+						type="button"
+						data-grind={g.key}
+						class="cursor-pointer rounded-full border-none bg-transparent px-[18px] py-2.5 text-sm font-medium text-ink transition-colors duration-200"
+					>{g.label}</button>
+				))}
+			</div>
+		</div>
+		<div class="grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-6">
+			{products.map((p) => <ProductCard product={p} />)}
+		</div>
+	</div>
+</section>
